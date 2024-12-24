@@ -1,0 +1,106 @@
+<meta name="theme-color" content="dark light" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link rel="stylesheet" href="css/main.min.css" />
+<link rel="stylesheet" href="custom.css" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.cdnfonts.com/css/akira-expanded" rel="stylesheet" />
+
+<div class="msp_radio">
+    <div class="np__global_wrapper">
+        <div id="jp_container_rcast" class="np__global_player">
+            <div class="app-player" id="app-player">
+                <!-- Player -->
+                <div class="player song-now flex column">
+                    <div class="player-wrapper">
+                        <!-- Cover -->
+                        <div class="player-cover flex items-center justify-center g-2 items-center">
+                            <div class="player-left flex items-center">
+                                <!-- Cover -->
+                                <div class="player-artwork player-artwork-style relative">
+                                    <img alt="artwork" height="600" src="assets1/cover.png" width="600" />
+                                </div>
+                                <!-- Data -->
+                                <div class="player-cover-title uppercase fw-700 flex column">
+                                    <div class="player-song-name">
+                                        <!-- <span class="player-program-badge"><i></i></span> -->
+                                        <span class="color-title fw-700 song-name song-title station-name">Song</span>
+                                    </div>
+                                    <span class="color-title fs-8 song-artist station-description truncate">Artist</span>
+                                </div>
+                            </div>
+                            <!-- Controladores -->
+                            <div class="player-controller">
+                                <!-- Cambiar estacion hacia atras -->
+                                <button class="player-button player-button-backward-step">
+                                    <svg class="i i-backward-step" viewBox="0 0 24 24">
+                                        <path d="M6 5v14M18 4v16L8 12Z"></path>
+                                    </svg>
+                                </button>
+                                <!-- Reproducir/Pausar -->
+                                <button aria-label="Play/Pause" class="player-button player-button-play flex-none">
+                                    <svg class="i i-play" viewBox="0 0 24 24">
+                                        <path d="m7 3 14 9-14 9z"></path>
+                                    </svg>
+                                </button>
+                                <!-- Cambiar estacion hacia adelante -->
+                                <button class="player-button player-button-forward-step">
+                                    <svg class="i i-forward-step" viewBox="0 0 24 24">
+                                        <path d="M18 5v14M6 4v16l10-8Z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="player-right flex items-center">
+                                <!-- Volume -->
+                                <div class="player-button player-button-volume">
+                                    <button class="player-button player-button-volume-toggle" data-outside="player-volume">
+                                        <svg class="i i-volume-high" viewBox="0 0 24 24">
+                                            <path d="M6 9H2v6h4l5 4V5Zm9 7a5 5 0 0 0 0-8m3 12a10 10 0 0 0 0-16"></path>
+                                        </svg>
+                                        Volume
+                                    </button>
+                                    <div class="dropdown" id="player-volume">
+                                        <div class="player-range-wrapper">
+                                            <input aria-label="Volume" class="player-volume" max="100" min="0" name="player" type="range" value="100" />
+                                            <div class="player-range-fill"></div>
+                                            <div class="player-range-thumb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Multiradio -->
+                                <button class="player-button-alt player-button-stations" data-outside="offcanvas-stations">
+                                    <svg class="i i-radio" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="2"></circle>
+                                        <path d="M5 4.9a10 10 0 0 0 0 14.2M7.8 7.7a6 6 0 0 0 0 8.6m8.4 0a6 6 0 0 0 0-8.6M19 19.1a10 10 0 0 0 0-14.2"></path>
+                                    </svg>
+                                    Estaciones
+                                </button>
+
+                                <div class="player-station player-artwork-style relative">
+                                    <img alt="artwork" height="600" src="assets1/cover.png" width="600" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visualizador -->
+                    <div class="visualizer" data-bars="120" data-max-height="100"></div>
+                </div>
+
+                <!-- Estaciones -->
+                <aside class="offcanvas-player scrollbar" id="offcanvas-stations">
+                    <div class="offcanvas-content">
+                        <div class="stations flex g-1" id="stations"></div>
+                    </div>
+                </aside>
+
+                <div class="modal-overlay"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+<script src="js/main.js"></script>
